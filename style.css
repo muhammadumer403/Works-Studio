@@ -1,0 +1,388 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair Display";
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    width: 100vw;
+}
+nav{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 35px 60px;
+}
+nav svg path{
+    fill: black;
+}
+.main{
+    background: #000000;
+}
+.loader{
+    width: 100%;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, 0.986) ;
+    position: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    text-align: center;
+}
+
+.loader h1{
+    font-size: 6.9vw;
+    line-height: 7.3vw;
+    font-weight: 300;
+    line-height: 5vmax;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 9;
+}
+.loader video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 6;
+}
+.yellow1{
+    height: 100%;
+    width: 100%;
+    background: #F5E41B;
+    position: absolute;
+    z-index: 8;
+}
+.yellow2{
+    height: 100%;
+    width: 100%;
+    background: #F5E41B;
+    position: absolute;
+    z-index: 7;
+}
+
+.page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 6;
+}
+
+.page1 h1{
+    font-size: 6.9vw;
+    line-height: 7.3vw;
+    font-weight: 300;
+    line-height: 5vmax;
+    letter-spacing: -2px;
+}
+
+.page2{
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.ndpage{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.ndpage h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    z-index: 9;
+    line-height: 11vh;
+}
+
+.moving{
+    height: fit-content;
+    width: 100%;
+    white-space: nowrap;
+    padding: 10px 20px;
+    background-color: #F5E41B;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%) scaleY(0);
+
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+@keyframes mover {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.ndpage:hover .moving{
+    transform: translate(0,-50%) scaleY(1);
+}
+.moving-in{
+ display: inline-block;
+ animation-name: mover;
+ animation-duration: 4s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+ color: #000000;
+ 
+}
+
+.moving-in h5{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 30px;
+    font-family: sans-serif;
+    font-size: 1.1vmax;
+    font-weight: 300;
+}
+
+.blur{
+    position: absolute;
+    background: #F5E41B;
+    width: 40%;
+    left: 50%;
+    top:50%;
+    
+    height: 100%;
+    box-shadow: 10px 0 20px 10px #F5E41B;
+    transform: translate(-50%,-50%);
+    z-index: 8;
+
+}
+
+.page3{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: white;
+    border-bottom: none;
+    
+
+    
+}
+.posts{
+columns: 3;
+column-gap: 40px;
+padding-top: 20px;
+padding: 20px;
+border-bottom: none;
+}
+
+
+.post{
+    width: 32vmax;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position:relative ;
+}
+.post:nth-child(2)
+.post img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0;
+}
+.lg{
+    height: 80vh;
+}
+.sm{
+    height: 30vh;
+}
+.md{
+    height: 50vh;
+} 
+.post img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+.post:hover .overlay{
+ opacity: 1;
+ transition: 0.3s ease;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 30vh;
+    z-index: 500;
+    font-size: 30px;
+    border-top:none ;
+    position: relative;
+}
+.top{
+    background-color: white;
+    height: 50%;
+    font-size: 15px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.top h1{
+    font-weight: 100;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.top i {
+    font-size: 40px;
+    cursor: pointer;
+}
+.bottom{
+   
+    height: 50%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.bottomleft h3,.bottomright h3{
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.bottomright{
+    display: flex;
+    gap: 70px;
+}
+.bottom-end{
+    height: 10vh;
+    display: grid;
+    place-items: center;
+    font-size: 1.6vmax;
+    font-family: sans-serif ;
+    color: white;
+    border-top: 2px solid white;
+    width: 95%;
+    margin: 3vmax auto;
+}
+.bottom-end h3 span{
+    font-style: italic;
+
+}
+.bottom-end h3{
+    font-family: sans-serif;
+}
+@media (max-width:768px) {
+    .posts{
+        columns: 2;
+        width: 100%;
+    }
+    .post{
+        width: 50vw;
+    }
+    
+}
+@media (max-width:768px) {
+    .posts{
+        columns: 1;
+        margin: 0;
+        padding: 0;
+    }
+    .post{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .lg,.sm,.md{
+        height: 50vh;
+        margin-left: 5vw;
+        margin-top: 100px;
+    }
+    
+    .loader{
+        max-width: 100vw;
+    }
+    .bottom{
+        width: 99vw;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding: 0;
+        margin: 0;
+    }
+    .bottomleft,.bottomright{
+        width: 95vw;
+
+    }
+    nav{
+        width: 60vw;
+        
+    }
+    .moving{
+        width: 88vw;
+        overflow-x:hidden ;
+    }
+    .posts{
+        padding: 0;
+        margin: 0;
+        width: 99vw;
+    }
+    .post{
+        width: 90%;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .footer{
+        width: 99vw;
+    }
+    .bottomleft h3{
+    padding: 5vw 0;
+
+}
+.bottomright{
+    padding-right: 1vmax;
+}
+}
